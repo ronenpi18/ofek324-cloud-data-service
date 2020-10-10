@@ -10,6 +10,8 @@ var cors 		= require('cors')
 var config = require('./config'); // get our config file
 
 var staticData = require('./app/routes/staticData')
+var events = require('./app/routes/events')
+var catalog = require('./app/routes/catalog')
 // =================================================================
 // configuration ===================================================
 // =================================================================
@@ -35,7 +37,8 @@ app.use(cors());
 // routes ==========================================================
 // =================================================================
 app.use('/staticData',staticData)
-
+app.use('/events', events)
+app.use('/catalog', catalog)
 
 // =================================================================
 // start the server ================================================
